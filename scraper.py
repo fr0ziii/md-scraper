@@ -25,9 +25,20 @@ def download_markdown(repo_url, output_dir="docs"):
         contents = response.json()
 
         markdown_files = []
-        for item in contents:
-            if item["name"].endswith(".md"):
-                markdown_files.append(item["download_url"])
+        def get_markdown_files(contents, depth=0, max_depth=3):
+            if depth > max_depth:
+                return
+            for item in contents:
+                if item["type"] == "file" and item["name"].endswith(".md"):
+                    markdown_files.append(item["download_url"])
+                elif item["type"] == "dir":
+                    dir_url = item["url"]
+                    response = requests.get(dir_url)
+                    response.raise_for_status()
+                    dir_contents = response.json()
+                    get_markdown_files(dir_contents, depth + 1, max_depth)
+        
+        get_markdown_files(contents)
 
         # Download each markdown file
         for download_url in markdown_files:

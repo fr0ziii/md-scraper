@@ -1,6 +1,6 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
-
-# GitHub Repository Scraper
+<h1 align="center">
+  md-scraper
+</h1>
 > A tool to download all markdown files from a GitHub repository.
 
 A brief description of your project, what it is used for and how does life get
@@ -12,14 +12,14 @@ A quick introduction of the minimal setup you need to get a hello world up &
 running.
 
 ```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
+git clone https://github.com/fr0ziii/md-scraper.git
+cd md-scraper/
 pip install requests
 pip install beautifulsoup4
-python scraper.py https://github.com/adam-p/markdown-here
+python scraper.py https://github.com/fr0ziii/md-scraper
 ```
 
-This will download all the markdown files from the `adam-p/markdown-here` repository into the `/docs/` folder.
+This will download all the markdown files from the `fr0ziii/md-scraper` repository into the `/docs/` folder.
 
 ### Initial Configuration
 
@@ -32,8 +32,8 @@ Here's a brief intro about what a developer must do in order to start developing
 the project further:
 
 ```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
+git clone https://github.com/fr0ziii/md-scraper.git
+cd md-scraper/
 pip install requests
 pip install beautifulsoup4
 ```
@@ -62,9 +62,10 @@ And again you'd need to tell what the previous code actually does.
 ## Features
 
 What's all the bells and whistles this project can perform?
-* Downloads all markdown files from a GitHub repository
+* Downloads all markdown files from a GitHub repository, including files in subdirectories.
 * Saves the markdown files to the `/docs/` folder
 * Includes error handling
+* Limits recursion depth to 3 to prevent excessive downloads.
 
 ## Configuration
 
@@ -112,8 +113,8 @@ Even though this information can be found inside the project on machine-readable
 format like in a .json file, it's good to include a summary of most useful
 links to humans using your project. You can include links like:
 
-- Repository: https://github.com/your/awesome-project/
-- Issue tracker: https://github.com/your/awesome-project/issues
+- Repository: https://github.com/fr0ziii/md-scraper
+- Issue tracker: https://github.com/fr0ziii/md-scraper/issues
   - In case of sensitive bugs like security vulnerabilities, please contact
     my@email.com directly instead of using issue tracker. We value your effort
     to improve the security and privacy of this project!
